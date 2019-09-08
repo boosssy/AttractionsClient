@@ -1,0 +1,29 @@
+<h1>Wybierz miasto</h1>
+<form (ngSubmit)="onSubmitCity()" class="attrform">
+  <div class="form-group">
+    <select name="citiesName" required>
+      <option value="" disabled selected >Wybierz miasto</option>
+      <option *ngFor="let place of places" value="{{place.city}}" (click)="check()">
+        {{place.city}}
+      </option>
+    </select>
+    <br />
+    <button type="submit" class="buttonConfirm" (click)="checkOption()">Zatwierdź</button>
+  </div>
+</form>
+
+<ng-container *ngIf="isVisible">
+  <h1>Wybierz atrakcje</h1>
+  <form (ngSubmit)="onSubmitAttraction()" class="attrform">
+    <div class="form-group">
+      <select name="attractionName" required>
+        <option value="" disabled selected>Wybierz atrakcje</option>
+        <option *ngFor="let attraction of attractions" value="{{attraction.name}}">
+          {{attraction.name}}
+        </option>
+      </select>
+      <br />
+      <button type="submit" class="buttonbuy" >Kup teraz</button>
+    </div>
+  </form>
+</ng-container>

@@ -1,0 +1,38 @@
+<div class="menu">
+  <ul>
+    <li><a href="#start">Start</a></li>
+    <li><a href="#offer">Oferta</a></li>
+    <li><a href="#overview-attractions">Atrakcje</a></li>
+    <!--<li><a href="#about-us">O nas</a></li>-->
+    <li><a href="#contact">Kontakt</a></li>
+    <li><a href="#login">Zaloguj</a></li>
+  </ul>
+</div>
+
+<div class="start" id="start">
+  <app-starting-view></app-starting-view>
+</div>
+
+<div class="offer" id="offer">
+  <app-offer></app-offer>
+</div>
+
+<div class="overview-attractions" id="overview-attractions">
+  <app-overview-attractions [places]="places" [attractions]="attractions"></app-overview-attractions>
+</div>
+
+<!--<div class="about-us" id="about-us">
+  <app-about-us></app-about-us>
+</div>-->
+
+<div class="contact" id="contact">
+  <app-contact></app-contact>
+</div>
+
+<div class="login" id="login">
+  <app-login></app-login>
+</div>
+
+<footer>
+  <h1>All rights reserved &copy;</h1>
+</footer>
