@@ -11,6 +11,17 @@ import {FormsModule} from '@angular/forms';
 import { OfferComponent } from './offer/offer.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
+import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
+
+// Client id for the facebook oauth. This is used for validation of our application to facebook.
+// https://developers.facebook.com/
+const facebookoauthclientid = '797209834027503';
+const config = new AuthServiceConfig([
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider(facebookoauthclientid)
+  }
+]);
 
 
 @NgModule({
@@ -27,9 +38,12 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    SocialLoginModule.initialize(config)
   ],
-  providers: [],
+
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
