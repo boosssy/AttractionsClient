@@ -10,10 +10,19 @@ export class LoginComponent implements OnInit {
 
   title = 'Angular Socio login via Facebook!';
   user: any;
+  showButtonLoginFb = false;
+  showButtonLogoutFb = true;
+  hiddenButtonLoginFb = true;
+  hiddenButtonLogoutFb = false;
 
   constructor(private socioAuthServ: AuthService) { }
 
   signIn(platform: string): void {
+    this.showButtonLoginFb = true;
+    this.showButtonLogoutFb = false;
+    this.hiddenButtonLoginFb = false;
+    this.hiddenButtonLogoutFb = true;
+
     platform = FacebookLoginProvider.PROVIDER_ID;
     this.socioAuthServ.signIn(platform).then(
       (response) => {
@@ -25,6 +34,10 @@ export class LoginComponent implements OnInit {
 
   // Method to log out.
   signOut(): void {
+    this.showButtonLoginFb = false;
+    this.showButtonLogoutFb = true;
+    this.hiddenButtonLoginFb = true;
+    this.hiddenButtonLogoutFb = false;
     this.socioAuthServ.signOut();
     this.user = null;
     console.log('User signed out.');
@@ -32,5 +45,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
 
 }

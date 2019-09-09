@@ -8,13 +8,16 @@
 
   <button class="btn" type="submit" onClick="check()">Zaloguj</button>
   <button class="btn" type="submit" onClick="check()">Rejestracja</button>
-  <button class="btn btn-primary btn-block"   (click)="signIn('Facebook');">
+  <button *ngIf="hiddenButtonLoginFb" [disabled]="showButtonLoginFb" class="btn btn-primary btn-block"   (click)="signIn('Facebook');">
     <i class="fa fa-facebook" style="background-color: #385998; border-color: #385998"> </i> Zaloguj przez FB
   </button>
-  <button class="btn" (click)="signOut();">Wyloguj się</button>
+  <button *ngIf="hiddenButtonLogoutFb" [disabled]="showButtonLogoutFb" class="btn" (click)="signOut();">Wyloguj się</button>
 </form>
-  <div *ngIf="user">
-    <img src="{{ user.photoUrl }}">
-    <h4>{{ user.name }}</h4>
-  </div>
+<div class="menu" *ngIf="user">
+  <!-- todo blokowac klawisz ZALOGUJ i uaktywnic klawisz WYLOGUJ -->
+  <!-- todo pokazac zdjęcie na pasku nawigacyjnym -->
+  <!-- todo wylaczyc zakladke ZALOGUJ -->
+  <!-- todo obsluga klawiszy ZALOGUJ i WYLOGUJ -->
+      <img src="{{ user.photoUrl }}">
+</div>
 

@@ -34,9 +34,13 @@ h1 {
   font-weight: 300;
   cursor: pointer;
   transition: all .1s ease-in-out;
+
 }
 .buttonbuy:hover {
-   background-color: transparent;
-   border-color: #fff;
-   transition: all .1s ease-in-out;
+  background-color: transparent;
+  border-color: black;
+  color: black;
+  transition: all .1s ease-in-out;
  }
+
+
